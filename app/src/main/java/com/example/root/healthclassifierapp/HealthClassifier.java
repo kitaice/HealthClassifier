@@ -5,59 +5,61 @@ import java.util.HashMap;
 
 public class HealthClassifier {
 
-    static boolean debug = true;
+    //static boolean debug = true;
+    static DecisionTree tree = new DecisionTree(null, null, 0);
 
-    public static void main(String[] args) {
-        if (args.length != 3) {
-            System.out.println("usage: java HealthClassifier <trainFilename> <testFilename> <k instances per-leaf>");
-            System.exit(-1);
-        }
-
+    public static void init(String train_file, String test_file, int instances) {
         // Create train set instances and attributes.
         ArrayList<ArrayList<Double>> train_dataset;
         ArrayList<String> train_attribute_names;
         ArrayList<ArrayList<Double>> test_dataset;
         ArrayList<String> test_attribute_names;
         // Make train data set.
-        HashMap<String, Object> hash_map = createDataSet(args[0]);
+        HashMap<String, Object> hash_map = createDataSet(train_file);
         train_dataset = (ArrayList<ArrayList<Double>>)hash_map.get("dataset");
         train_attribute_names = (ArrayList<String>)hash_map.get("attribute_names");
         // Make test data set.
-        hash_map = createDataSet(args[1]);
+        hash_map = createDataSet(test_file);
         test_dataset = (ArrayList<ArrayList<Double>>)hash_map.get("dataset");
         test_attribute_names = (ArrayList<String>)hash_map.get("attribute_names");
         
         // Build tree.
-        DecisionTree tree = new DecisionTree(train_dataset, train_attribute_names, Integer.parseInt(args[2]));
-        
+        tree = new DecisionTree(train_dataset, train_attribute_names, instances);
+
+        /*
         if (debug) {
             System.out.println("Debug: make tree and print info\n");
             DecisionTree test_tree = new DecisionTree(train_dataset,train_attribute_names);
             test_tree.printInfo();
         }
-       int classify;
-       System.out.println("\nClassify data\n");
-       System.out.println("print training accuracy");
-       System.out.println("---------------------------------------------------------------");
-       int accuracy=0;
-       for(ArrayList<Double> instance : train_dataset){
-           classify=tree.classify(instance);
-           if (classify == 1) System.out.println("Healthy");
-           System.out.println("Unhealthy");
-           if(classify==instance.get(train_attribute_names.size())) accuracy++;
-       }
-       tree.printAccuracy(accuracy,train_dataset.size());
+        */
+        int classify;
+        System.out.println("\nClassify data\n");
+        System.out.println("print training accuracy");
+        System.out.println("---------------------------------------------------------------");
+        int accuracy=0;
+        for(ArrayList<Double> instance : train_dataset){
+            classify=tree.classify(instance);
+            if (classify == 1) System.out.println("Healthy");
+            System.out.println("Unhealthy");
+            if(classify==instance.get(train_attribute_names.size())) accuracy++;
+        }
+        tree.printAccuracy(accuracy,train_dataset.size());
 
-       System.out.println("\nprint testing accuracy");
-       System.out.println("---------------------------------------------------------------");
-       accuracy=0;
-       for(ArrayList<Double> instance : test_dataset){
-           classify=tree.classify(instance);
-           if (classify == 1) System.out.println("Healthy");
-           System.out.println("Unhealthy");
-           if(classify==instance.get(test_attribute_names.size())) accuracy++;
-       }
-       tree.printAccuracy(accuracy,test_dataset.size());
+        System.out.println("\nprint testing accuracy");
+        System.out.println("---------------------------------------------------------------");
+        accuracy=0;
+        for(ArrayList<Double> instance : test_dataset){
+            classify=tree.classify(instance);
+            if (classify == 1) System.out.println("Healthy");
+            System.out.println("Unhealthy");
+            if(classify==instance.get(test_attribute_names.size())) accuracy++;
+        }
+        tree.printAccuracy(accuracy,test_dataset.size());
+    }
+
+    private static int classifySingleData(ArrayList<Double> app_input) {
+        return tree.classify(app_input);
     }
 
     /**
