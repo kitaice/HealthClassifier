@@ -1,3 +1,5 @@
+package com.example.root.healthclassifierapp;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -43,9 +45,7 @@ public class DecisionTree {
     /**
      * Build a decision tree given a training set then prune it using a tuning
      * set
-     * 
-     * @param train: the training set
-     * @param tune: the tuning set
+     *
      */
     DecisionTree(ArrayList<ArrayList<Double>> train_dataset, ArrayList<String> train_attribute_names, int min_leafnum) {
         this.train_attributes = train_attribute_names;
@@ -235,7 +235,7 @@ public class DecisionTree {
      * @param dataset the input data
      * @param index the attribute number
      */
-    private void sortList(ArrayList<ArrayList<Double>> dataset, int index) {
+    private void sortList(ArrayList<ArrayList<Double>> dataset, final int index) {
         Collections.sort(dataset, new Comparator<List<Double>>() {
             @Override
             public int compare(List<Double> o1, List<Double> o2) {
@@ -292,7 +292,7 @@ public class DecisionTree {
      * Calculate information gain
      * 
      * @param dataset
-     * @param rootInfoGain
+     * @param entropy
      * @param threshold
      * @param index
      * @return

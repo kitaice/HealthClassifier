@@ -1,3 +1,5 @@
+package com.example.root.healthclassifierapp;
+
 public class DecisionTreeNode {
     //If leaf, label to return
     int class_label;

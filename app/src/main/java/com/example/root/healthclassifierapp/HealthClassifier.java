@@ -1,3 +1,5 @@
+package com.example.root.healthclassifierapp;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -58,7 +60,7 @@ public class HealthClassifier {
         tree.printAccuracy(accuracy,test_dataset.size());
     }
 
-    private static int classifySingleData(ArrayList<Double> app_input) {
+    public static int classifySingleData(ArrayList<Double> app_input) {
         return tree.classify(app_input);
     }
 
