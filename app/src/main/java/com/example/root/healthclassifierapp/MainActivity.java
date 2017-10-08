@@ -1,11 +1,14 @@
 package com.example.root.healthclassifierapp;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,12 +18,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        hclass.init("/root/StudioProjects/HealthClassifier/App/app/src/main/assets/train.csv",
-                "/root/StudioProjects/HealthClassifier/App/app/src/main/assets/train.csv",
-                10);
+
+            hclass.init("/storage/sdcard/train.csv","storage/sdcard/test.csv", 10);
+
+
     }
 
-    public void displayMessage(View view) {
+   public void displayMessage(View view) {
         ArrayList<Double> instance = new ArrayList<Double>();
         EditText HR_edittext = (EditText) findViewById(R.id.editText14);
         String HR_str = HR_edittext.getText().toString();
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             intent = new Intent(this, OtherDisplayMessageActivity.class);
         }
+       // Intent intent = new Intent(this, DisplayMessageActivity.class);
         startActivity(intent);
     }
 }

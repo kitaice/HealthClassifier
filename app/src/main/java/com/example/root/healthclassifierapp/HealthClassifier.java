@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class HealthClassifier {
 
     //static boolean debug = true;
-    static DecisionTree tree = new DecisionTree(null, null, 0);
+    static DecisionTree tree = new DecisionTree();
 
     public static void init(String train_file, String test_file, int instances) {
         // Create train set instances and attributes.
