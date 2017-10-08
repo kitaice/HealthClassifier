@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.root.healthclassifierapp.MainActivity">
+
+    <EditText
+        android:id="@+id/editText13"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText14" />
+
+    <EditText
+        android:id="@+id/editText20"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText13" />
+
+    <EditText
+        android:id="@+id/editText19"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText20" />
+
+    <EditText
+        android:id="@+id/editText18"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText19" />
+
+    <EditText
+        android:id="@+id/editText17"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText18" />
+
+    <EditText
+        android:id="@+id/editText16"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText17" />
+
+    <EditText
+        android:id="@+id/editText14"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginRight="16dp"
+        android:editable="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="displayMessage"
+        android:text="Check!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/editText21"
+        android:layout_width="180dp"
+        android:layout_height="42dp"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/BPL_edit_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText13"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/editText28"
+        android:layout_width="180dp"
+        android:layout_height="42dp"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/BPH_edit_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText20"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/editText27"
+        android:layout_width="45dp"
+        android:layout_height="42dp"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/BMI_edit_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText19"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/editText26"
+        android:layout_width="110dp"
+        android:layout_height="42dp"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/BS_edit_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText18"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/editText25"
+        android:layout_width="150dp"
+        android:layout_height="42dp"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/PBS_edit_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText17"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/editText24"
+        android:layout_width="155dp"
+        android:layout_height="42dp"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/BC_edit_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText16"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/editText23"
+        android:layout_width="100dp"
+        android:layout_height="42dp"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/HR_edit_value"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText14"
+        tools:layout_editor_absoluteX="16dp" />
+</android.support.constraint.ConstraintLayout>

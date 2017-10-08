@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Health Classifier</string>
+    <string name="HR_edit_value">Heart Rate</string>
+    <string name="BPL_edit_value">Blood Pressure - Low</string>
+    <string name="BPH_edit_value">Blood Pressure - High</string>
+    <string name="BMI_edit_value">BMI</string>
+    <string name="BS_edit_value">Blood Sugar</string>
+    <string name="PBS_edit_value">Postprandial B.S.</string>
+    <string name="BC_edit_value">Blood Cholesterol</string>
+    <string name="healthy_msg">Healthy!</string>
+    <string name="unhealthy_msg">Unhealthy!</string>
+</resources>
