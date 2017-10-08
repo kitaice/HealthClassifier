@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 //import java.util.Random;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class random {
     public static ArrayList<ArrayList<Double>> create(FileWriter writer, int size, ArrayList<ArrayList<Double>> train )throws IOException {
